@@ -2,7 +2,7 @@
 train.py - a custom training script to train using your own data. To use, change the directory parameters under the comment add the folder path for training here TRAIN_DATA_PATH = 'yourdirectoryhere/'
 :star: ProGAN Pytorch looks for folders in your training directory. This is very handy if you want to break your data up by type. It will, however, throw an error if there are no folders. If you don't want to sort all of your data create a couple of folders and add some images and leave the rest in the main folder.
 
-I also added some comments in the main PRO_GAN.py to make it clear where you need to alter the batch size for smaller datasets.
+I also added some comments in the main PRO_GAN.py to make it a bit clearer where you need to alter the batch size for smaller datasets. if you run into interger errors lower the feedback factor. This one is set at 5 instead of 100 for smaller datasets.
 
 # pro_gan_pytorch
 Package contains implementation of ProGAN.<br> 
