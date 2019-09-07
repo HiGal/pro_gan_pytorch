@@ -533,9 +533,10 @@ class ProGAN:
         save_image(samples, img_file, nrow=int(np.sqrt(len(samples))),
                    normalize=True, scale_each=True)
 
+# lower the feedback factor for integer errors was 100 now 5
     def train(self, dataset, epochs, batch_sizes,
               fade_in_percentage, num_samples=16,
-              start_depth=0, num_workers=3, feedback_factor=100,
+              start_depth=0, num_workers=3, feedback_factor=5,
               log_dir="./models/", sample_dir="./samples/", save_dir="./models/",
               checkpoint_factor=1):
         """
