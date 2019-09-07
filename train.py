@@ -6,7 +6,7 @@ from torchvision import transforms
 import torchvision
 
 # add the folder path for training here
-TRAIN_DATA_PATH = 'PHDGAN/'
+TRAIN_DATA_PATH = 'yourdirectoryhere/'
 
 # select the device to be used for training
 device = th.device("cuda" if th.cuda.is_available() else "cpu")
