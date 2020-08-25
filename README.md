@@ -1,8 +1,8 @@
 # :star: Custom Training Additions
 train.py - a custom training script to train using your own data. To use, use flags such as -d or --dataset to specify your dtaset size. you can also specify the amount of images in the dataset by configuring --batch_size or -b 
 
-example: `python train.py --dataset=YOURDATASET –-batch_size=1` 
-- This example will use the dataset YOURDATASET and will output a single image per sample. 
+example: `python train.py --dataset=YOURDATASET –-batch_size=1 --epochs=10` 
+- This example will use the dataset YOURDATASET and will output a single image per sample and will run for 10 epochs per depth layer.
 
 :star: ProGAN Pytorch looks for folders in your training directory. This is very handy if you want to break your data up by type. It will, however, throw an error if there are no folders. If you don't want to sort all of your data create a couple of folders and add some images and leave the rest in the main folder.
 
