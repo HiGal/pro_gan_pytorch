@@ -4,9 +4,18 @@ import pro_gan_pytorch.PRO_GAN as pg
 
 from torchvision import transforms
 import torchvision
+import argparse
+
+#adding flags for training parameters
+parser = argparse.ArgumentParser()
+parser.add_argument('--dataset', '-d', help='Folder the dataset is in', required=True, type=str)
+parser.add_argument('--batch', '-b', help='Batch size, or how many images in a grid', required=False, type=int, default='9')
+parser.add_argument('--epochs', '-e', help='how many epochs to train for', required=False, type=int, default='10')
+args = parser.parse_args()
 
 # add the folder path for training here
-TRAIN_DATA_PATH = 'yourdirectoryhere/'
+folder = args.dataset
+TRAIN_DATA_PATH = folder
 
 # select the device to be used for training
 device = th.device("cuda" if th.cuda.is_available() else "cpu")
@@ -41,10 +50,14 @@ if __name__ == '__main__':
 
     # some parameters:
     depth = 6
-    # hyper-parameters per depth (resolution)
-    num_epochs = [10, 20, 20, 20, 20, 20]
+    # hyper-parameters per depth (resolution) default=10,10,20,20,20,20,20 can be higher for more detail. 
+    # Change Batch size to get different amounts per grid. refers to the total number of images produced. default is 32.
+    # amount needs to match depth parameter
+    batch = args.batch
+    epoch = args.epochs
+    num_epochs = [epoch, epoch, epoch, epoch, epoch, epoch]
     fade_ins = [50, 50, 50, 50, 50, 50]
-    batch_sizes = [32, 32, 32, 32, 32, 32]
+    batch_sizes = [batch, batch, batch, batch, batch, batch]
     latent_size = 128
 
     # get the data. Ignore the test data and their classes
